@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .nav
+    .nav-block
+      .nav-item(data-type="top") 头条
+      .nav-item(data-type="shehui") 社会
+      .nav-item(data-type="guonei") 国内
+      .nav-item(data-type="guoji") 国际
+      .nav-item(data-type="yule") 娱乐
+      .nav-item(data-type="tiyu") 体育
+      .nav-item(data-type="junshi") 军事
+      .nav-item(data-type="keji") 科技
+      .nav-item(data-type="caijing") 财经
+      .nav-item(data-type="shishang") 时尚
+  .block
+    ul
+      each item in lists
+        li.li
+          img(src="#{item.thumbnail_pic_s}").img
+          a(href="#{item.url}") #{item.title}
+  .loading 
+    .loading-icon
+    span 正在加载
+  script(src="javascripts/main.js")

@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var bus = require('./routes/bus');
 var news = require('./routes/news');
 var qiniu = require('./routes/qiniu');
+var shop = require('./routes/shop');
 
 var app = express();
 
@@ -32,6 +33,9 @@ app.get('/news', news.index);
 app.get('/getNews', news.news);
 app.get('/qiniu', qiniu.index);
 app.post('/geturl', qiniu.getUrl);
+
+/* shop routes */
+app.get('/shop',shop.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

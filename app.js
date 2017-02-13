@@ -28,7 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/bus', bus);
-app.get('/news', news.news);
+app.get('/news', news.index);
+app.get('/getNews', news.news);
 app.get('/qiniu', qiniu.index);
 app.post('/geturl', qiniu.getUrl);
 

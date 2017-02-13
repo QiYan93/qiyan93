@@ -18,7 +18,7 @@ $('.nav-item').on('click',function(){
     var type = $(this).attr('data-type');
     $('.block').find('li').remove();
     $('.loading').show();
-    fetch(host+'/news?type='+type+'&key=ee46dcc6f129ccd3acb0e12c46428aee',{
+    fetch(host+'/getNews?type='+type+'&key=ee46dcc6f129ccd3acb0e12c46428aee',{
         method:'GET'
     }).then(function(res){
         return res.json()

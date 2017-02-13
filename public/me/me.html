@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .img{
+            width: 100%;
+            max-width: 680px;
+        }
+        .modal{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,.7);
+        }
+        .download{
+            display: inline-block;
+            padding: 15px 30px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <img class="img" src="./me.png" alt="">
+    <div class="modal">
+        <a href="./me.pdf" class="download">点击下载我的简历</a>
+    </div>
+</body>
+</html>

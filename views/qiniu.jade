@@ -4,10 +4,10 @@ block content
   //- .imgUpload
     input(type="file") 
     button 上传
-  .form-inline
+  .form-inline(style="margin:20px 0;")
     .form-group
        label url数量
-       input(type="text" class="form-control" id="countMax") 
+       input(type="text" class="form-control" id="countMax" style="margin:0 15px") 
     button(id="getUrlBtn" class="btn btn-primary" onclick="getUrlFunc()") 获取地址
   ul#list.list-group
   script(src="javascripts/qiniu.js")

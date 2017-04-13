@@ -26,6 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('*',function(req,res,next){
+  if(req.protocol !== 'https'){
+    res.redirect('https://'+req.hostname+req.url)
+  }else{
+    next()
+  }
+})
 app.use('/', index);
 app.use('/users', users);
 app.use('/bus', bus);

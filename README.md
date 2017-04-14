@@ -2,10 +2,8 @@
 qiyan93个人文件杂货铺
 
 ### 启动
-、、
 npm install
 npm start
-、、
 
 ### 说明
 

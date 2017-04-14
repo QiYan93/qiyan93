@@ -7,7 +7,8 @@ exports.index = function(req, res, next) {
 
 exports.getUrl = function(req, res, next) {
     var countMax = req.query.countMax;//最大上传次数
-
+    var localFilePath = req.query.localFilePath;//上传文件名
+    var suffix = localFilePath.slice( localFilePath.lastIndexOf('.'));
     //需要填写你的 Access Key 和 Secret Key
     qiniu.conf.ACCESS_KEY = 'EmXiLaiKVU__AMdDX9f5hA4_XiLsFq-oCTfmcVNd';
     qiniu.conf.SECRET_KEY = 'x6GxBsVvc-CjrHfFvHUgrUm2PFMYTfHLIasVFqv4';
@@ -25,7 +26,7 @@ exports.getUrl = function(req, res, next) {
         }
 
         //上传到七牛后保存的文件名
-        key = time + '/' + name + '.html';
+        key = time + '/' + name + suffix;
         keyList.push(key)
         //构建上传策略函数
         function uptoken(bucket, key) {
@@ -37,7 +38,7 @@ exports.getUrl = function(req, res, next) {
         token = uptoken(bucket, key);
 
         //要上传文件的本地路径
-        filePath = './public/url/luodiye-femal.html'
+        filePath = './public/url/'+localFilePath;
 
         //构造上传函数
         function uploadFile(uptoken, key, localFile) {
@@ -57,4 +58,12 @@ exports.getUrl = function(req, res, next) {
         uploadFile(token, key, filePath);
     }
     res.json({url:keyList});
+}
+
+exports.upload = function(req, res, next) {
+    var url = 'http://' + req.headers.host + '/url/' + req.file.originalname
+    res.json({
+        code : 200,
+        name : req.file.originalname
+    })
 }

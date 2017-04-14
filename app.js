@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +27,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var storage = multer.diskStorage({
+    destination: function (req, file, cb){
+        cb(null, './public/url')
+    },
+    filename: function (req, file, cb){
+        cb(null, file.originalname)
+    }
+});
+var upload = multer({
+    storage: storage
+});
+
+
 app.use('*',function(req,res,next){
   if(req.protocol !== 'https'){
     res.redirect('https://'+req.hostname+req.url)
@@ -40,6 +54,7 @@ app.get('/news', news.index);
 app.get('/getNews', news.news);
 app.get('/qiniu', qiniu.index);
 app.post('/geturl', qiniu.getUrl);
+app.post('/upload',upload.single('file'),qiniu.upload);
 
 /* shop routes */
 app.get('/shop',shop.index);

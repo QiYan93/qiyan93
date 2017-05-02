@@ -2,7 +2,7 @@ var express = require('express');
 var qiniu = require("qiniu");
 
 exports.index = function(req, res, next) {
-    res.render('qiniu',{title:'落地页地址生成'});
+    res.render('/',{title:'落地页地址生成'});
 };
 
 exports.getUrl = function(req, res, next) {
@@ -10,11 +10,11 @@ exports.getUrl = function(req, res, next) {
     var localFilePath = req.query.localFilePath;//上传文件名
     var suffix = localFilePath.slice( localFilePath.lastIndexOf('.'));
     //需要填写你的 Access Key 和 Secret Key
-    qiniu.conf.ACCESS_KEY = '*******';
-    qiniu.conf.SECRET_KEY = '*******';
+    qiniu.conf.ACCESS_KEY = 'EmXiLaiKVU__AMdDX9f5hA4_XiLsFq-oCTfmcVNd';
+    qiniu.conf.SECRET_KEY = 'x6GxBsVvc-CjrHfFvHUgrUm2PFMYTfHLIasVFqv4';
 
     //要上传的空间
-    bucket = '*******';
+    bucket = 'weixin-ushaqi';
 
     var arr = ['a','b','c','d','e','f','g','h','i','g','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     var keyList = [];

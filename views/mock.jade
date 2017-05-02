@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    div.container.content
+        textarea(id="json",class="left",placeholder="请输入json生成规则")
+        textarea(id="data",class="right",disabled)
+    div.container.footer
+        div.btn-group
+            button#start.btn.btn-primary 生成
+            button#clear.btn.btn-danger 清空
+
+    script(src="/javascripts/libs/mock-min.js")
+    script(src="/javascripts/mock.js")

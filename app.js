@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer = require('multer');
+var gzip = require('express-gzip');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,6 +13,8 @@ var bus = require('./routes/bus');
 var news = require('./routes/news');
 var qiniu = require('./routes/qiniu');
 var shop = require('./routes/shop');
+var kuaidi = require('./routes/kuaidi');
+var mock = require('./routes/mock');
 
 var app = express();
 
@@ -21,6 +24,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(gzip);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -55,6 +59,8 @@ app.get('/getNews', news.news);
 app.get('/qiniu', qiniu.index);
 app.post('/geturl', qiniu.getUrl);
 app.post('/upload',upload.single('file'),qiniu.upload);
+app.use('/kuaidi',kuaidi);
+app.use('/mock',mock);
 
 /* shop routes */
 app.get('/shop',shop.index);

@@ -130,8 +130,12 @@ ul .li .img{
   height: 100%;
 }
 
+.mock{
+  max-width: inherit;
+}
 .content{
-  height: 80%;
+  height: 90%;
+  padding-top: 30px;
 }
 .left,
 .right{

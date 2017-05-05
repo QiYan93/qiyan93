@@ -1,8 +1,17 @@
-extends layout
-
-block content
+doctype html
+html
+  head
+    meta(name="baidu_union_verify" content="bd54fabcc57b65483d9c23a99196b53b")
+    meta(property="wb:webmaster" content="cdb09624235cc9ba")
+    meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no")
+    title= title
+    link(rel='stylesheet', href='//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="//cdn.bootcss.com/zepto/1.1.7/zepto.min.js")
+    script(src="/javascripts/libs/fetch.js")
+  body.mock
     div.container.content
-        textarea(id="json",class="left",placeholder="请输入json生成规则")
+        div#editor.left 
         textarea(id="data",class="right",disabled)
     div.container.footer
         div.btn-group
@@ -10,4 +19,5 @@ block content
             button#clear.btn.btn-danger 清空
 
     script(src="/javascripts/libs/mock-min.js")
+    script(src="/javascripts/libs/ace/ace.js")
     script(src="/javascripts/mock.js")

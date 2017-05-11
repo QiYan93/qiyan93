@@ -61,6 +61,7 @@ app.post('/geturl', qiniu.getUrl);
 app.post('/upload',upload.single('file'),qiniu.upload);
 app.use('/kuaidi',kuaidi);
 app.use('/mock',mock);
+app.use('*', index);
 
 /* shop routes */
 app.get('/shop',shop.index);

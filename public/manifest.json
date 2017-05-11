@@ -1,0 +1,21 @@
+{
+  "name": "qiyan93",
+  "short_name": "qiyan93",
+  "icons": [{
+    "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },{
+    "src": "images/icon-164x164.png",
+      "sizes": "164x164",
+      "type": "image/png"
+    },{
+    "src": "images/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/news",
+  "display": "standalone",
+  "background_color": "#1296db",
+  "theme_color": "#1296db"
+}

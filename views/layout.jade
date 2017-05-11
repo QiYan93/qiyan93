@@ -1,13 +1,24 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
+    meta(http-equiv="Content-Security-Policy" content="upgrade-insecure-requests")
     meta(name="baidu_union_verify" content="bd54fabcc57b65483d9c23a99196b53b")
     meta(property="wb:webmaster" content="cdb09624235cc9ba")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no")
-    title= title
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    meta(name="apple-mobile-web-app-title" content="qiyan93")
+    meta(name="msapplication-TileImage" content="images/icon-64x64.png")
+    meta(name="msapplication-TileColor" content="#1296db")
+    title= title    
+    link(rel="manifest" href="/manifest.json")
+    link(rel="apple-touch-icon" href="images/icon-64x64.png")    
     link(rel='stylesheet', href='//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="//cdn.bootcss.com/zepto/1.1.7/zepto.min.js")
     script(src="/javascripts/libs/fetch.js")
+    script(src="/javascripts/sw/sw.js")
   body
     block content

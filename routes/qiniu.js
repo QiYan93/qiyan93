@@ -2,7 +2,7 @@ var express = require('express');
 var qiniu = require("qiniu");
 
 exports.index = function(req, res, next) {
-    res.render('qiniu',{title:'落地页地址生成'});
+    res.render('tools/qiniu',{title:'落地页地址生成'});
 };
 
 exports.getUrl = function(req, res, next) {

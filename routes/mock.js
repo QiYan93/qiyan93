@@ -19,7 +19,7 @@ router.get('/',function(req,res,next){
     //     dataStr: dataStr,
     //     dataMockStr: dataMockStr
     // }
-    res.render('mock',{})
+    res.render('tools/mock',{})
 })
 
 module.exports = router;

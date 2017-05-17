@@ -9,11 +9,11 @@ var gzip = require('express-gzip');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var bus = require('./routes/bus');
+var bus = require('./routes/api/bus');
 var news = require('./routes/news');
 var qiniu = require('./routes/qiniu');
 var shop = require('./routes/shop');
-var kuaidi = require('./routes/kuaidi');
+var kuaidi = require('./routes/api/kuaidi');
 var mock = require('./routes/mock');
 
 var app = express();

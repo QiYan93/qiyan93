@@ -34,7 +34,7 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  console.log('[Service Worker] Fetch', e.request.url);
+  // console.log('[Service Worker] Fetch', e.request.url);
   var dataUrl = location.origin;
   if (e.request.url.indexOf(dataUrl) > -1) {
     e.respondWith(

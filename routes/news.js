@@ -21,7 +21,7 @@ exports.index = function(req, res, next) {
         });
         var js = fs.readFileSync('./public/javascripts/main.js');
         stream.end(js.toString());
-        res.render('news', {title:'柒颜', lists: body.result.data });
+        res.render('pages/news', {title:'柒颜', lists: body.result.data });
     })
 };
 

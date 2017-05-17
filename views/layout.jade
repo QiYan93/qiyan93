@@ -7,6 +7,7 @@ html
     meta(property="wb:webmaster" content="cdb09624235cc9ba")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="theme-color" content="#1296db")
     meta(name="apple-mobile-web-app-capable" content="yes")
     meta(name="apple-mobile-web-app-status-bar-style" content="black")
     meta(name="apple-mobile-web-app-title" content="qiyan93")
@@ -20,5 +21,19 @@ html
     script(src="//cdn.bootcss.com/zepto/1.1.7/zepto.min.js")
     script(src="/javascripts/libs/fetch.js")
     script(src="/javascripts/sw/sw.js")
+    script(type="text/javascript").
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', '9edeede5a0f5aa90']);
+        (function() {
+            var vds = document.createElement('script');
+            vds.type='text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+      })();
   body
     block content

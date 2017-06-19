@@ -8,11 +8,9 @@ var multer = require('multer');
 var gzip = require('express-gzip');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var bus = require('./routes/api/bus');
 var news = require('./routes/news');
 var qiniu = require('./routes/qiniu');
-var shop = require('./routes/shop');
 var kuaidi = require('./routes/api/kuaidi');
 var mock = require('./routes/mock');
 
@@ -54,7 +52,6 @@ app.use('*',function(req,res,next){
 
 /* api block */
 app.use('/', index);
-app.use('/users', users);
 app.use('/bus', bus);
 app.get('/news', news.index);
 app.get('/getNews', news.news);
@@ -64,9 +61,6 @@ app.post('/upload',upload.single('file'),qiniu.upload);
 app.use('/kuaidi',kuaidi);
 app.use('/mock',mock);
 app.use('*', index);
-
-/* shop routes */
-app.get('/shop',shop.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

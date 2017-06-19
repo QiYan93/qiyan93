@@ -43,7 +43,7 @@ var upload = multer({
     storage: storage
 });
 
-
+/* http->https 重定向 */
 app.use('*',function(req,res,next){
   if(req.protocol !== 'https'){
     res.redirect('https://'+req.hostname+req.url)
@@ -51,6 +51,8 @@ app.use('*',function(req,res,next){
     next()
   }
 })
+
+/* api block */
 app.use('/', index);
 app.use('/users', users);
 app.use('/bus', bus);

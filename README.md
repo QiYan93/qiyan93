@@ -1,7 +1,7 @@
 ## qiyan93
 qiyan93个人文件杂货铺
 
-[![Build Status](https://www.travis-ci.org/QiYan93/qiyan93.svg?branch=master)](https://www.travis-ci.org/QiYan93/qiyan93)
+<!--[![Build Status](https://www.travis-ci.org/QiYan93/qiyan93.svg?branch=master)](https://www.travis-ci.org/QiYan93/qiyan93)-->
 
 ### 启动
 ```

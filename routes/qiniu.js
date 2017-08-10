@@ -10,8 +10,8 @@ exports.getUrl = function(req, res, next) {
     var localFilePath = req.query.localFilePath;//上传文件名
     var suffix = localFilePath.slice( localFilePath.lastIndexOf('.'));
     //需要填写你的 Access Key 和 Secret Key
-    qiniu.conf.ACCESS_KEY = 'EmXiLaiKVU__AMdDX9f5hA4_XiLsFq-oCTfmcVNd';
-    qiniu.conf.SECRET_KEY = 'x6GxBsVvc-CjrHfFvHUgrUm2PFMYTfHLIasVFqv4';
+    qiniu.conf.ACCESS_KEY = '**';
+    qiniu.conf.SECRET_KEY = '**';
 
     //要上传的空间
     bucket = 'weixin-ushaqi';

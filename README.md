@@ -16,6 +16,3 @@ npm start
 express后台渲染，模版是jade
 
 nodejs写本站api，后台requests转发聚合api，返回json数据
-
-#### 七牛上传文件
-注：七牛nodejs上传文件在qiyan93.com/qiniu路径下

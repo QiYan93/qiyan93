@@ -1,5 +1,5 @@
-var dataCacheName = 'weatherData-v1';
-var cacheName = 'weatherPWA-final-1';
+var dataCacheName = 'qiyan93-v1';
+var cacheName = 'qiyan93-final-1';
 var filesToCache = [
   '/',
   '/news',

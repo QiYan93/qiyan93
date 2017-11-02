@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var md5 = require('md5');
-var base64 = require('base64url')
+var base64 = require('base64url');
+var sha1 = require('crypto-js/sha1');
 
+/* 快递查询接口--单个单号查询（参数：单号、公司代号） */
 router.get('/',function(req,res,next){
     var type = req.query.type;
     var number = req.query.number;
@@ -32,6 +34,7 @@ router.get('/',function(req,res,next){
     })
 });
 
+/* 快递公司查询--根据单号查询 */
 router.get('/type',function(req,res,next){
     var url = 'http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx';
     var number = req.query.number;
@@ -58,5 +61,21 @@ router.get('/type',function(req,res,next){
         })
     })
 })
+
+/* 客服消息接口 */
+// router.all('/service', function(req, res, next){
+//     var reqQueryData = req.query;
+//     var reqBodyData = req.body;
+//     console.log(req.HTTP_RAW_POST_DATA);
+//     var token = 'ketie2qiyan';
+//     var arr = [reqQueryData['timestamp'], reqQueryData['nonce'],token];
+//     arr = arr.sort();
+//     var arrStr = sha1(arr.join('')).toString();
+//     if(arrStr === reqQueryData.signature){
+//         res.end(reqQueryData.echostr)
+//     }else{
+//         res.end('来源不是微信')
+//     }
+// })
 
 module.exports = router;
